@@ -1,20 +1,193 @@
 body {
-    background-color: black;
-    width: 95%;
-    margin: auto;
+    background: black;
+    padding: 15px;
 }
 
-.header {
-    background: url('素材/starfield-banner.jpg ');
-    position: fixed;
-    width: 95%;
+header {
+    display: grid;
+    grid-template-columns: 20% auto 20%;
+    grid-template-rows: repeat(2, 50px);
+    background: url("images/starfield-banner.jpg");
 }
 
-.header .logo-link {
+.logo {
+    grid-row: 1 / span 2;
+    grid-column: 1;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav {
+    grid-row: 1;
+    grid-column: 2;
+    text-align: right;
+}
+
+.main-nav li {
+    display: inline-block;
+    border-left: 2px solid #555555;
+    color: white;
     padding: 10px;
+    font-size: 20px;
 }
 
-.header .logo {
-    width:110px;
-    margin:11px;
+.main-nav li:first-child {
+    border-left: 0;
+}
+
+.sub-nav {
+    grid-row: 2;
+    grid-column: 2;
+    background: gray;
+    text-align: center;
+}
+
+.sub-nav li {
+    display: inline-block;
+    border-left: 1px solid white;
+    color: white;
+    margin: 18px 0 10px 0;
+    padding: 0 10px;
+    font-size: 13px;
+}
+
+.sub-nav li:first-child {
+    border-left: 0;
+}
+
+.utils {
+    display: inline-grid;
+    grid-template-rows: 50px;
+    grid-template-columns: 60% 20% 20%;
+    grid-row: 1;
+    grid-column: 3;
+}
+
+.search-input {
+    padding: 0;
+    border: 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: #555555;
+}
+
+.search-img {
+    display: inline-block;
+    height: 50px;
+    background: #555555;
+}
+
+.share-img {
+    display: inline-block;
+    height: 50px;
+}
+
+@media screen and (max-width: 1200px) {
+    .main-nav li {
+        font-size: 15px;
+    }
+
+    .sub-nav li {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .main-nav {
+        display: none;
+    }
+
+    .sub-nav {
+        display: none;
+    }
+
+    .left {
+        grid-column: 1 / span 4;
+
+    }
+
+    .right-up-left {
+        grid-column: 1 / span 4;
+    }
+
+    .right-up-right {
+        grid-column: 1 / span 4;
+    }
+
+    .right-down {
+        grid-column: 1 / span 4;
+    }
+}
+
+
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 320px);
+    grid-auto-rows: 320px;
+    border: 10px;
+}
+
+.img-with-des {
+    padding: 10px;
+    display: grid;
+    grid-template-rows: auto 80px;
+    grid-template-columns: 100%;
+}
+
+@media screen and (min-width: 1000px){
+    .left {
+        grid-row: 1 / span 2;
+        grid-column: 1 / span 2;
+    }
+
+    .right-up-left {
+        grid-row: 1;
+        grid-column: 3;
+    }
+
+    .right-up-right {
+        grid-row: 1;
+        grid-column: 4;
+    }
+
+    .right-down {
+        grid-row: 2;
+        grid-column: 3 / span 2;
+    }
+}
+
+
+.main-img {
+    grid-row: 1 / span 2;
+    grid-column: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.img-desc {
+    grid-row: 2;
+    grid-column: 1;
+    color: white;
+}
+
+.img-desc p {
+    margin: 0;
+}
+
+.title {
+    padding: 10px;
+    background: #0000ffaa;
+    width: min-content;
+    min-height: 20px;
+}
+
+.content {
+    background: #ffffffaa;
+    width: 100%;
+    padding: 10px 0;
 }
