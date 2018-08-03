@@ -1,0 +1,278 @@
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700);
+
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+body {
+    font-size: 14px;
+    line-height: 1.4285;
+    width: 95%;
+    margin: 0 auto;
+    background: black;
+    font-family: "Titillium Web", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    color: #ffffff;
+}
+
+header {
+    width: 95%;
+    height: 135px;
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    top: 0;
+    margin: 0 auto;
+    background-image: url("images/starfield-banner.jpg");
+    z-index: 2;
+}
+
+header .logo {
+    padding: 21px;
+}
+
+nav {
+    flex-shrink: 0;
+    margin-left: 130px;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav li {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    position: relative;
+}
+
+nav li a {
+    font-size: 1.47em;
+    padding: 30px 14px;
+    line-height: 20px;
+}
+
+nav li:first-child::before {
+    border: 0;
+}
+
+nav li:before {
+    content: "";
+    border: 1px solid #555555;
+    position: absolute;
+    height: 60%;
+    top: 20%;
+}
+
+.search {
+    flex-shrink: 0;
+    position: relative;
+    margin: 1.7em 2em;
+    display: flex;
+    align-items: flex-start;
+}
+
+.search input {
+    border: 0;
+    background: #333333;
+    padding: 10px 20px 10px 10px;
+    font-size: inherit;
+    font-family: inherit;
+    width: 126px;
+}
+
+.search form {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search img {
+    width: 30px;
+}
+
+.search-input img {
+    width: 30px;
+    position: absolute;
+    right: 5px;
+}
+
+.search-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.sub-menu {
+    display: flex;
+    margin-top: 5px;
+}
+
+.sub-menu li {
+    display: flex;
+    position: relative;
+}
+
+.sub-menu li:before {
+    position: absolute;
+    content: '';
+    height: 60%;
+    top: 20%;
+    border-left: 1px solid #888;
+}
+
+.sub-menu li:first-child:before {
+    border: 0;
+}
+
+.sub-menu a {
+    background: #555555;
+    padding: 10px 15px;
+}
+
+main {
+    margin-top: 135px;
+    font-size: 1em;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px 20px;
+}
+
+.container img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.image-box {
+    position: relative;
+    height: 100%;
+}
+
+.image-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.image-title {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #5d7fb9;
+    font-size: 1.214em;
+    opacity: 0.85;
+    line-height: 1.3em;
+}
+
+.image-body {
+    padding: 5px 10px;
+    background: rgba(255, 255, 255, 0.8);
+    color: black;
+    font-weight: 600;
+    font-size: 1.3571em;
+}
+
+.events {
+    background: #39719e;
+    height: 100%;
+    padding: 0.2em 0.5em;
+    position: relative;
+}
+
+.events-title {
+    border-bottom: 1px solid white;
+    padding: 8px 0 6px 0;
+    margin: 0 auto 3px;
+    width: 96%;
+}
+
+.events-body {
+    padding-top: 2px;
+    padding-bottom: 0.2em;
+}
+
+.events-footer {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 96%;
+    margin: 0 auto;
+    bottom: 0;
+    border-top: 1px solid white;
+}
+
+.events-footer div {
+    margin: 0 5px;
+}
+
+.right {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "left right" "footer footer";
+    grid-gap: 20px 20px;
+}
+
+.top-left {
+    grid-area: left;
+}
+
+.top-right {
+    grid-area: right;
+}
+
+.bottom {
+    grid-area: footer;
+}
+
+@media (max-width: 1000px) {
+    .container {
+        display: grid;
+        grid-template-columns: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-rows: repeat(4, 1fr);
+        grid-gap: 20px 20px;
+    }
+
+    .right {
+        display: grid;
+        grid-row: 2 / span 3;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: 1fr;
+        grid-template-areas: "row1" "row2" "row3";
+    }
+
+    .top-left {
+        height: 100%;
+        width: 100%;
+        grid-area: row1;
+    }
+
+    .top-right {
+        height: 100%;
+        width: 100%;
+        grid-area: row2;
+    }
+
+    .bottom {
+        grid-area: row3;
+    }
+}
